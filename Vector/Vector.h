@@ -10,7 +10,7 @@
 template <typename T>
 concept Numerical = std::is_integral_v<T> || std::is_floating_point_v<T>;
 
-template <typename T>
+template <Numerical T>
 class Vector {
 private:
     T *data_;
@@ -42,7 +42,7 @@ public:
     T dotProduct(const Vector& other) const;
 };
 
-template<typename T>
+template<Numerical T>
 Vector<T>::Vector(std::initializer_list<T> list) : size_(list.size()) {
     data_ = new T[size_];
     size_t i = 0;
@@ -51,7 +51,7 @@ Vector<T>::Vector(std::initializer_list<T> list) : size_(list.size()) {
     }
 }
 
-template<typename T>
+template<Numerical T>
 Vector<T>::Vector(const Vector<T>& other) : size_(other.size_) {
     data_ = new T[size_];
     for (size_t i = 0; i < size_; ++i) {
@@ -59,18 +59,18 @@ Vector<T>::Vector(const Vector<T>& other) : size_(other.size_) {
     }
 }
 
-template<typename T>
+template<Numerical T>
 Vector<T>::Vector(Vector<T>&& other) noexcept : data_(other.data_), size_(other.size_) {
     other.data_ = nullptr;
     other.size_ = 0;
 }
 
-template<typename T>
+template<Numerical T>
 Vector<T>::~Vector() {
     delete[] data_;
 }
 
-template<typename T>
+template<Numerical T>
 Vector<T>& Vector<T>::operator=(const Vector<T>& other) {
     if (this != &other) {
         delete[] data_;
@@ -83,7 +83,7 @@ Vector<T>& Vector<T>::operator=(const Vector<T>& other) {
     return *this;
 }
 
-template<typename T>
+template<Numerical T>
 Vector<T>& Vector<T>::operator=(Vector<T>&& other) noexcept {
     if (this != &other) {
         delete[] data_;
@@ -95,7 +95,7 @@ Vector<T>& Vector<T>::operator=(Vector<T>&& other) noexcept {
     return *this;
 }
 
-template<typename T>
+template<Numerical T>
 Vector<T> Vector<T>::operator+(const Vector<T>& other) const {
     if (size_ != other.size_) {
         throw std::invalid_argument("Vector sizes do not match");
@@ -107,7 +107,7 @@ Vector<T> Vector<T>::operator+(const Vector<T>& other) const {
     return result;
 }
 
-template<typename T>
+template<Numerical T>
 Vector<T> Vector<T>::operator-(const Vector<T>& other) const {
     if (size_ != other.size_) {
         throw std::invalid_argument("Vector sizes do not match");
@@ -119,7 +119,7 @@ Vector<T> Vector<T>::operator-(const Vector<T>& other) const {
     return result;
 }
 
-template<typename T>
+template<Numerical T>
 Vector<T> Vector<T>::operator*(T scalar) const {
     Vector<T> result(size_);
     for (size_t i = 0; i < size_; ++i) {
@@ -128,7 +128,7 @@ Vector<T> Vector<T>::operator*(T scalar) const {
     return result;
 }
 
-template<typename T>
+template<Numerical T>
 T& Vector<T>::operator[](size_t index) {
     if (index >= size_) {
         throw std::out_of_range("Index out of bounds");
@@ -136,7 +136,7 @@ T& Vector<T>::operator[](size_t index) {
     return data_[index];
 }
 
-template<typename T>
+template<Numerical T>
 const T& Vector<T>::operator[](size_t index) const {
     if (index >= size_) {
         throw std::out_of_range("Index out of bounds");
@@ -144,7 +144,7 @@ const T& Vector<T>::operator[](size_t index) const {
     return data_[index];
 }
 
-template<typename T>
+template<Numerical T>
 T Vector<T>::euclideanLength() const {
     T sum = 0;
     for (size_t i = 0; i < size_; ++i) {
@@ -153,7 +153,7 @@ T Vector<T>::euclideanLength() const {
     return sqrt(sum);
 }
 
-template<typename T>
+template<Numerical T>
 T Vector<T>::dotProduct(const Vector<T>& other) const {
     if (size_ != other.size_) {
         throw std::invalid_argument("Vector sizes do not match");
@@ -165,7 +165,7 @@ T Vector<T>::dotProduct(const Vector<T>& other) const {
     return result;
 }
 
-template<typename T>
+template<Numerical T>
 size_t Vector<T>::size() const {
     return size_;
 }
