@@ -29,5 +29,3 @@ This project involves creating a custom string class (`MyString`) in C++ along w
 1. Start with the `MyString` class, focusing on proper memory management and basic string operations.
 2. Implement the `iterator` class, ensuring it provides mutable access to characters.
 3. Create the `const_iterator` by modifying the `iterator` class to prevent modification.
-4. Develop the `filter_iterator` that allows iteration over characters meeting specific criteria.
-5. Ensure all iterators work correctly with standard algorithms and range-based for loops.

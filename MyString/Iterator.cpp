@@ -1,11 +1,6 @@
-//
-// Created by 006ma on 09.07.2024.
-//
-
 #include "Iterator.h"
 #include "MyString.h"
 
-// TODO check the implementation
 Iterator::Iterator() noexcept : myString_(nullptr), index_(0) {}
 
 Iterator::Iterator(MyString *myString, size_t index) : myString_(myString), index_(index) {}
