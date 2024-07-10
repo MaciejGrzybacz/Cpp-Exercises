@@ -27,14 +27,6 @@
   - Override display function for magazine-specific information
   - Override get-type function to return "Magazine"
 
-## DVD (Derived from MediaItem)
-- Additional Properties:
-  - Duration in minutes (float)
-  - Genre (string)
-- Methods:
-  - Override display function for DVD-specific details
-  - Override get-type function to return "DVD"
-
 ## User (Base Class)
 - Properties:
   - Name (string)

@@ -18,7 +18,7 @@ private:
 
 public:
     Vector() : data_(nullptr), size_(0) {}
-    Vector(size_t size) : size_(size) {
+    explicit Vector(size_t size) : size_(size) {
         data_ = new T[size_];
         for (size_t i = 0; i < size_; i++) {
             data_[i] = T();

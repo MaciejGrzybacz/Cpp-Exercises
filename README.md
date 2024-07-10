@@ -8,10 +8,10 @@ This repository contains various exercises aimed to improve my C++ skills by imp
 The `Vector` class is a C++ template class representing a mathematical vector.
 It helps to understand the concept of templates and operator overloading.
 
-## Circular Buffer
+## MyString
 
-The `CircularBuffer` class is a C++ template class representing a circular buffer.
-It helps to understand the concept of templates, operator overloading, memory management and other advanced concepts.
+The `MyString` project is a C++ custom string class with advanced iterators.
+It helps to understand the concept of iterators, memory management, and string manipulation.
 
 ## Library
 
@@ -23,21 +23,26 @@ It helps to understand the concept of classes, inheritance, polymorphism, and ot
 The 'Task Manager' project is a C++ task management system.
 It helps to understand the concept of multithreading, synchronization, and other concurrent programming concepts.
 
-## Traffic
+## Data Analyser
 
-The 'Traffic' project is a C++ traffic simulation system.
-It helps to understand the concept of event-driven programming, state machines, and other advanced programming concepts.
+The 'Data Analyser' project is a C++ data analysis system.
+It helps to understand the concept of parallelism, concurrency, and other advanced programming concepts.
 
 ## Advanced Library
 
 The 'Advanced Library' project is a modern C++ library management system.
 It helps to understand advanced C++ features and best practices.
 
-## TODO 
-
-- [Vector Template Class]
-- [Circular Buffer]
+## TODO
 - [Library]
 - [Task Manager]
-- [Traffic]
+- [Data Analyser]
 - [Advanced Library]
+
+## DONE
+- [MyString]
+- [Vector Template Class]
+
+## License
+
+This repository is licensed under the MIT License.
