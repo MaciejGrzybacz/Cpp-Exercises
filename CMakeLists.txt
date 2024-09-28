@@ -7,8 +7,14 @@ project(CppExercises)
 #    add_subdirectory(Vector)
 #endif()
 
-option(BUILD_MY_STRING "Build the MyString project" ON)
+#option(BUILD_MY_STRING "Build the MyString project" ON)
 
-if(BUILD_MY_STRING)
-    add_subdirectory(MyString)
+#if(BUILD_MY_STRING)
+#    add_subdirectory(MyString)
+#endif()
+
+option(BUILD_MY_LIST "Build the LinkedList project" ON)
+
+if(BUILD_MY_LIST)
+    add_subdirectory(LinkedList)
 endif()
